@@ -1,0 +1,24 @@
+/**:
+  ros__parameters:
+    # 关节名称（与 moveit 中的 joint_names 严格对应）
+    joint_names: [shoulder_pan, shoulder_lift, elbow, wrist_flex, wrist_roll]
+
+    # 零位 PWM（每个关节的中位值）
+    zero_pwms: [1835, 1134, 1484, 1534, 2439]
+
+    # 弧度到 PWM 的转换系数（PWM 范围 / π）
+    pwm_per_rad: [636.62, 636.62, 636.62, 636.62, 636.62]
+
+    # PWM 限幅
+    pwm_min: 500
+    pwm_max: 2500
+
+    # 串口配置
+    port: "/dev/ttyACM0"
+    baudrate: 115200
+
+    # ========== 运动时间控制（核心加速参数） ==========
+    use_trajectory_time: false       # 禁用轨迹自带的时间戳
+    time_from_start: 0.001           # 每个点的统一运动时间（秒）-> 1ms
+    min_move_time: 0.0005            # 最小运动时间下限
+    send_interval: 0.0               # 指令间的额外等待（秒）

@@ -1,0 +1,13 @@
+serial_action_server:
+  ros__parameters:
+    port: '/dev/ttyACM0'
+    baudrate: 115200
+    joint_names: ['shoulder_pan', 'shoulder_lift', 'elbow', 'wrist_flex', 'wrist_roll']
+    zero_pwms: [1835, 1134, 1484, 1534, 2439]
+    # shoulder_lift 方向相反，设为负值；其他关节为正
+    pwm_per_rad: [200.0, -200.0, 200.0, 200.0, 200.0]
+    pwm_min: 500
+    pwm_max: 2500
+    use_trajectory_time: True
+    default_move_time: 2.0
+    min_move_time: 0.3          # 每个轨迹段最少运动 0.3 秒，防止过快
