@@ -99,13 +99,18 @@ ros2_ws/
 ```bash
 cd ~/ros2_ws/src
 git clone https://github.com/0o02/learm_ros2_project.git
-1. 自行配置第三方依赖
+```
+### 2. 自行配置第三方依赖
 请自行下载并配置以下包：
 pymoveit2
 trac_ik（参考：https://github.com/JIE-808/trac_ik-ros2）
-1. 编译项目
+把已上包下载到ros2_ws目录下
+### 3. 编译项目
 ```bash
-运行
 cd ~/ros2_ws
 colcon build
 source install/setup.bash
+```
+### 4. 运行项目
+```bash
+ros2 launch learm_moveit_config demo_2.launch.py
